@@ -1,0 +1,8 @@
+{
+  "label": "Module 3: The AI-Robot Brain (NVIDIA Isaac)",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Integrate powerful AI perception and navigation capabilities into your robots using NVIDIA's advanced Isaac Sim and ROS modules."
+  }
+}

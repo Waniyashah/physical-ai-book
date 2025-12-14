@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<robot name="simple_arm">
+
+  <!-- BASE LINK -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.05"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.1 0.1 0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+    </inertial>
+  </link>
+
+  <!-- BASE TO JOINT 1 -->
+  <joint name="base_to_joint1" type="fixed">
+    <parent link="base_link"/>
+    <child link="joint1_link"/>
+    <origin xyz="0 0 0.025" rpy="0 0 0"/>
+  </joint>
+
+  <!-- JOINT 1 LINK -->
+  <link name="joint1_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.03" radius="0.02"/>
+      </geometry>
+      <material name="red">
+        <color rgba="0.8 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.03" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <!-- JOINT 1 (revolute) -->
+  <joint name="joint1" type="revolute">
+    <parent link="joint1_link"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0.015" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="100"/>
+  </joint>
+
+  <!-- LINK 1 -->
+  <link name="link1">
+    <visual>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 0.8 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.2" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <!-- LINK 1 TO JOINT 2 -->
+  <joint name="link1_to_joint2" type="fixed">
+    <parent link="link1"/>
+    <child link="joint2_link"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+  </joint>
+
+  <!-- JOINT 2 LINK -->
+  <link name="joint2_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.03" radius="0.02"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.03" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <!-- JOINT 2 (revolute) -->
+  <joint name="joint2" type="revolute">
+    <parent link="joint2_link"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0.015" rpy="0 1.5707 0"/> <!-- Rotate 90 degrees around Y for elbow -->
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="100" velocity="100"/>
+  </joint>
+
+  <!-- LINK 2 -->
+  <link name="link2">
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.02"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.15" radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.08"/>
+      <inertia ixx="0.0005" ixy="0" ixz="0" iyy="0.0005" iyz="0" izz="0.00005"/>
+    </inertial>
+  </link>
+
+  <!-- LINK 2 TO END EFFECTOR -->
+  <joint name="link2_to_ee" type="fixed">
+    <parent link="link2"/>
+    <child link="ee_link"/>
+    <origin xyz="0 0 0.075" rpy="0 0 0"/>
+  </joint>
+
+  <!-- END EFFECTOR LINK -->
+  <link name="ee_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.03"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.05 0.05 0.03"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.02"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00001" iyz="0" izz="0.00001"/>
+    </inertial>
+  </link>
+
+</robot>

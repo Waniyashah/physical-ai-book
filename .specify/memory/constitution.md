@@ -1,55 +1,109 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Book — “Physical AI & Humanoid Robotics: From Digital Intelligence to Embodied Robots” Constitution
+
+<!-- 
+Sync Impact Report:
+- Version change: 0.0.0 → 1.0.0
+- List of modified principles: All principles updated.
+- Added sections: All sections populated from user input.
+- Removed sections: None.
+- Templates requiring updates:
+  - ✅ .specify/templates/plan-template.md
+  - ✅ .specify/templates/spec-template.md
+  - ✅ .specify/templates/tasks-template.md
+- Follow-up TODOs: None.
+-->
+
+Create a complete, industry-aligned, technically accurate book that teaches students how to design, simulate, and deploy humanoid robots using ROS 2, Gazebo, Unity, and NVIDIA Isaac. The book will serve as the official curriculum for the Physical AI & Humanoid Robotics capstone quarter.
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Technical Accuracy
+Technical accuracy (robotics, AI, physics, ROS 2). All technical claims must be verifiable.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Clarity for Students
+Clarity for students with a programming background (Python, AI). The tone should be clear, educational, and instructor-like, with gradually increasing complexity.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Progressive Learning
+Progressive learning (simple → complex → integrated). The book is organized around 4 modules, each self-contained, explaining concepts, tools, hands-on exercises, and a mini-project.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Real-World Applicability
+Real-world applicability (simulation + hardware). Content must mirror industry standards for humanoid robotics labs.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Reproducibility
+Reproducibility (step-by-step, command-level clarity). All software instructions must be testable on Ubuntu 22.04, and all code examples must be executable.
 
-### [PRINCIPLE_6_NAME]
+### VI. Zero Hallucination
+Zero hallucination (all technical claims verifiable). All claims about ROS, Gazebo, Unity, and NVIDIA Isaac must reference official documentation. No fictional features or invented API calls.
 
+### VII. Modular Teaching
+Modular teaching (4 modules, each self-contained).
 
-[PRINCIPLE__DESCRIPTION]
+## Content and Structure Standards
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Writing Standards
+- Tone: Clear, educational, instructor-like
+- Complexity: Intermediate → Advanced (gradually increasing)
+- Use diagrams, command examples, architecture tables where needed
+- Use correct robotics terminology
+- Avoid ambiguous wording and generic AI explanations
+- Use short paragraphs and bullets for readability
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Source & Fact Requirements
+- All claims about ROS, Gazebo, Unity, and NVIDIA Isaac must reference official documentation.
+- Hardware specifications must match vendor docs (NVIDIA, Intel RealSense, Unitree).
+- No fictional features or invented API calls.
+- All software instructions must be testable on Ubuntu 22.04.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Book Structure Standards
+- Book organized strictly around 4 official modules:
+  1. The Robotic Nervous System (ROS 2)
+  2. The Digital Twin (Gazebo & Unity)
+  3. The AI-Robot Brain (NVIDIA Isaac)
+  4. Vision-Language-Action (VLA)
+- Each module explains: concepts → tools → hands-on → mini-project.
+- Chapters must map to the weekly breakdown (Weeks 1–13).
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Glossary Requirements
+- A complete glossary must be included (ROS terms, Isaac Sim terms, sensors, kinematics).
+- Robotics acronyms must be defined on first use.
+
+### Output Format
+- Docusaurus-based book
+- GitHub Pages deployment ready
+- Includes diagrams, tables, code examples, and architecture views
+- Each chapter includes:
+  - Learning outcomes
+  - Summary
+  - Hands-on steps
+  - Common errors & debugging section
+
+## Project Scope and Success Criteria
+
+### Constraints
+- All diagrams must be reproducible (ASCII or simple SVG).
+- All code examples must be executable.
+- All robot-related procedures (URDF, sensor simulation, Nav2, VSLAM) must follow official configurations.
+- Hardware descriptions must match realistic lab environments.
+- No unnecessary academic theory; focus on applied Physical AI.
+
+### Success Criteria
+- Book fully deployable on Docusaurus & GitHub Pages.
+- Students can complete all module mini-projects successfully.
+- Robot simulation pipelines work end-to-end:
+  - ROS 2 nodes → Gazebo → Isaac Sim → VLA planner
+- Capstone project instructions complete:
+  - Voice command → VLA plan → movement → object detection → manipulation.
+- Content mirrors industry standards for humanoid robotics labs.
+
+### Non-Goals (Explicitly Out of Scope)
+- Designing custom hardware from scratch.
+- Deep robotics mathematics (control theory, advanced kinematics proofs).
+- Reinforcement learning algorithms implementation from scratch.
+- Research-level humanoid gait optimization.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs *all future specifications*, chapter drafts, and agent actions.  
+All generated content must follow these principles without exception.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-08 | **Last Amended**: 2025-12-08

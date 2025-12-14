@@ -1,0 +1,8 @@
+{
+  "label": "Module 4: Vision-Language-Action (VLA)",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Explore the cutting-edge of AI by implementing a system that allows you to control a robot using natural language commands."
+  }
+}

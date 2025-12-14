@@ -1,0 +1,111 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .node {
+      fill: #f0f8ff; /* AliceBlue */
+      stroke: #333;
+      stroke-width: 2;
+      border-radius: 8px; /* Rounded corners for nodes */
+    }
+    .text {
+      font-family: sans-serif;
+      font-size: 16px;
+      text-anchor: middle;
+      fill: #333;
+    }
+    .label {
+      font-family: sans-serif;
+      font-size: 12px;
+      text-anchor: middle;
+      fill: #666;
+    }
+    .arrow {
+      stroke: #007bff; /* Blue */
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+    .dashed-arrow {
+      stroke: #007bff;
+      stroke-width: 1;
+      fill: none;
+      stroke-dasharray: 5,5;
+      marker-end: url(#arrowhead);
+    }
+    .data-flow {
+      font-family: sans-serif;
+      font-size: 11px;
+      fill: #555;
+    }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#007bff" />
+    </marker>
+  </defs>
+
+  <!-- Human Input -->
+  <rect class="node" x="50" y="50" width="150" height="60" rx="8" ry="8" />
+  <text class="text" x="125" y="85">Human Input</text>
+  <text class="label" x="125" y="100">(Natural Language Command)</text>
+
+  <!-- Language Module (LLM) -->
+  <rect class="node" x="250" y="30" width="160" height="80" rx="8" ry="8" />
+  <text class="text" x="330" y="60">Language Module</text>
+  <text class="label" x="330" y="75">(Large Language Model)</text>
+  <text class="label" x="330" y="90">(Intent, Entities, Actions)</text>
+
+  <!-- Vision Module -->
+  <rect class="node" x="250" y="150" width="160" height="60" rx="8" ry="8" />
+  <text class="text" x="330" y="180">Vision Module</text>
+  <text class="label" x="330" y="195">(Object Detection, Scene Understanding)</text>
+
+  <!-- Grounding Module -->
+  <rect class="node" x="460" y="90" width="150" height="60" rx="8" ry="8" />
+  <text class="text" x="535" y="120">Grounding Module</text>
+  <text class="label" x="535" y="135">(Connects Language to Vision)</text>
+
+  <!-- Action Planning Module -->
+  <rect class="node" x="460" y="200" width="150" height="60" rx="8" ry="8" />
+  <text class="text" x="535" y="230">Action Planning</text>
+  <text class="label" x="535" y="245">(High-Level Actions)</text>
+
+  <!-- Robot Control Module -->
+  <rect class="node" x="660" y="125" width="110" height="150" rx="8" ry="8" />
+  <text class="text" x="715" y="155">Robot</text>
+  <text class="text" x="715" y="170">Control</text>
+  <text class="label" x="715" y="185">(Low-Level Commands,</text>
+  <text class="label" x="715" y="200">Actuators, Sensors)</text>
+  <text class="label" x="715" y="225">(Environment)</text>
+  <rect x="680" y="240" width="70" height="30" fill="#aaffaa" stroke="#333" stroke-width="1" rx="4" ry="4"/>
+  <text class="data-flow" x="715" y="258">Environment</text>
+
+
+  <!-- Arrows (Data Flow) -->
+  <path class="arrow" d="M200 80 H250" />
+  <text class="data-flow" x="225" y="75">Command Text</text>
+
+  <path class="arrow" d="M330 110 V125 C330 135, 460 135, 460 125 V120" />
+  <text class="data-flow" x="395" y="120" text-anchor="start">Understood Intent</text>
+
+  <path class="arrow" d="M330 210 V195 C330 185, 460 185, 460 195 V200" />
+  <text class="data-flow" x="395" y="190" text-anchor="start">Visual Features</text>
+
+  <path class="arrow" d="M410 170 H460" />
+  <text class="data-flow" x="435" y="165" text-anchor="middle">Perception Data</text>
+
+  <path class="arrow" d="M610 120 H660" />
+  <text class="data-flow" x="635" y="115" text-anchor="middle">Grounded Action</text>
+
+  <path class="arrow" d="M610 230 H660" />
+  <text class="data-flow" x="635" y="225" text-anchor="middle">Robot Commands</text>
+
+  <path class="arrow" d="M715 275 V290 C715 300, 200 300, 200 290 V280" />
+  <text class="data-flow" x="450" y="310" text-anchor="middle">Sensor Feedback</text>
+
+  <path class="dashed-arrow" d="M125 110 V140 H250" />
+  <text class="data-flow" x="225" y="135">Raw Sensory Input</text>
+
+  <path class="dashed-arrow" d="M715 280 V320 H50 C50 330, 125 330, 125 320 V110" />
+  <text class="data-flow" x="125" y="340" text-anchor="middle">Environment Feedback</text>
+
+</svg>

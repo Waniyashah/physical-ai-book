@@ -1,0 +1,71 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .node {
+      fill: #f9f9f9;
+      stroke: #333;
+      stroke-width: 2;
+    }
+    .text {
+      font-family: sans-serif;
+      font-size: 14px;
+      text-anchor: middle;
+      fill: #333;
+    }
+    .arrow {
+      stroke: #333;
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+    .process {
+      fill: #e6e6e6;
+      stroke: #333;
+      stroke-width: 1;
+    }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Nodes -->
+  <rect class="node" x="50" y="20" width="120" height="50" rx="5" />
+  <text class="text" x="110" y="48">ROS 2 Control</text>
+  <text class="text" x="110" y="63">Nodes</text>
+
+  <rect class="node" x="240" y="20" width="120" height="50" rx="5" />
+  <text class="text" x="300" y="48">Gazebo</text>
+  <text class="text" x="300" y="63">Physics Engine</text>
+
+  <rect class="node" x="430" y="20" width="120" height="50" rx="5" />
+  <text class="text" x="490" y="48">Gazebo</text>
+  <text class="text" x="490" y="63">World & Models</text>
+
+  <rect class="node" x="50" y="230" width="120" height="50" rx="5" />
+  <text class="text" x="110" y="258">ROS 2 Sensor</text>
+  <text class="text" x="110" y="273">Data Nodes</text>
+
+  <!-- Processes -->
+  <rect class="process" x="190" y="100" width="220" height="40" rx="5" />
+  <text class="text" x="300" y="125">Joint Command (ROS 2 Topic)</text>
+
+  <rect class="process" x="190" y="160" width="220" height="40" rx="5" />
+  <text class="text" x="300" y="185">Sensor Data (ROS 2 Topic)</text>
+
+  <!-- Arrows -->
+  <path class="arrow" d="M110 70 V100 H190" />
+  <path class="arrow" d="M300 70 V100" />
+  <path class="arrow" d="M490 70 V100" />
+
+  <path class="arrow" d="M410 120 H360 V70" />
+  <path class="arrow" d="M240 70 V120 H190" />
+  <text class="text" x="380" y="85" font-size="10">Model State</text>
+
+  <path class="arrow" d="M490 200 V230" />
+  <path class="arrow" d="M300 200 V230" />
+  <path class="arrow" d="M110 230 V200 H190" />
+  <text class="text" x="380" y="215" font-size="10">Simulated Env</text>
+
+  <path class="arrow" d="M170 255 H240 V200" />
+</svg>
