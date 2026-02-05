@@ -1,0 +1,37 @@
+extraction:
+  sitemap_url: "https://physical-ai-book-rho.vercel.app/sitemap.xml"
+
+storage:
+  collection_name: "documentation_chunks"
+  vector_size: 1024
+  distance: "Cosine"
+  batch_size: 10
+
+embedding:
+  model: "embed-english-v3.0"
+  input_type: "search_document"
+
+chunking:
+  max_chunk_size: 1000
+  overlap_size: 200
+  min_chunk_size: 50
+
+retrieval:
+  top_k: 5
+  score_threshold: 0.3
+  timeout_seconds: 30
+
+validation:
+  accuracy_threshold: 0.90
+  latency_threshold_ms: 500
+  consistency_test_runs: 100
+
+pipeline:
+  max_batch_size: 96
+  max_concurrent_requests: 5
+  retry_attempts: 3
+  timeout_seconds: 30
+
+cohere:
+  model: "embed-english-v3.0"
+  input_type: "search_query"
