@@ -1,0 +1,24 @@
+agent:
+  model: "gemini-2.0-flash"
+  temperature: 0.1
+  max_tokens: 1000
+
+retrieval:
+  top_k: 5
+  score_threshold: 0.3
+  timeout_seconds: 30
+
+embedding:
+  model: "embed-english-v3.0"
+  input_type: "search_document"
+
+storage:
+  collection_name: "documentation_chunks"
+  vector_size: 1024
+  distance: "Cosine"
+  batch_size: 10
+
+pipeline:
+  max_concurrent_requests: 5
+  retry_attempts: 3
+  timeout_seconds: 30

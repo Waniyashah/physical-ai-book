@@ -1,0 +1,25 @@
+[project]
+name = "rag-pipeline"
+version = "0.1.0"
+description = "RAG Pipeline for website deployment, embedding generation, and vector storage"
+authors = [
+    {name = "AI Developer", email = "ai@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "cohere>=4.0.0",
+    "qdrant-client>=1.9.0",
+    "beautifulsoup4>=4.12.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+    "tqdm>=4.66.0",
+    "pyyaml>=6.0"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
